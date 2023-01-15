@@ -68,10 +68,10 @@ h1 {
 .footer li {
     margin: 0 10px;
 }
-.footer .not-selected {
-    color: #777;
+.footer .img {
+    color: rgb(85, 85, 85);
 }
-.footer .not-selected:hover {
+.footer .img:hover {
     color: #ddd;
     cursor: pointer;
     transition: 200ms;

@@ -1,38 +1,28 @@
-let selectedImg = '1';
-const btn1 = document.querySelector('#img1');
-const btn2 = document.querySelector('#img2');
-const btn3 = document.querySelector('#img3');
-const btn4 = document.querySelector('#img4');
+let imgIdx = 1;
+const btn = document.querySelectorAll('.img');
 
-function selected(imgNum) {
-    if (imgNum == selectedImg) {
-        return true;
+const img_paths = [
+    "url('./assets/images/hero-image.jpg')",
+    "url('./assets/images/portfolio-blurred.png')",
+    "url('./assets/images/calculator-blurred.png')",
+    "url('./assets/images/coding.png')"
+];
+
+let time = setInterval(function() {
+    document.body.style.backgroundImage = img_paths[imgIdx];
+    if (imgIdx == img_paths.length) {
+        imgIdx = 0;
     } else {
-        return false;
+        imgIdx++;
+    }
+}, 5000);
+
+for (let i=0; i < btn.length; i++) {
+    btn[i].addEventListener('click', function() {
+        document.body.style.backgroundImage = img_paths[i];
+    });
+    imgIdx = i + 1;
+    if (imgIdx == img_paths.length) {
+        imgIdx = 0;
     }
 }
-
-btn1.addEventListener('click', function() {
-    if (!selected('1')) {
-        selectedImg = '1';
-        document.body.style.backgroundImage = "url('../assets/images/hero-image.jpg')";
-    }
-});
-btn2.addEventListener('click', function() {
-    if (!selected('2')) {
-        selectedImg = '2';
-        document.body.style.backgroundImage = "url('../assets/images/portfolio-blurred.png')";
-    }
-});
-btn3.addEventListener('click', function() {
-    if (!selected('3')) {
-        selectedImg = '3';
-        document.body.style.backgroundImage = "url('../assets/images/calculator-blurred.png')";
-    }
-});
-btn4.addEventListener('click', function() {
-    if (!selected('4')) {
-        selectedImg = '4';
-        document.body.style.backgroundImage = "url('../assets/images/coding.png')";
-    }
-});
