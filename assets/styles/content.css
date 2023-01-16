@@ -20,7 +20,7 @@ a:hover {
 }
 .nav {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto auto;
     justify-content: center;
     background-color: #333;
     padding: 10px;
@@ -32,9 +32,14 @@ a:hover {
 .nav ul{
     list-style: none;
     display: flex;
+    height: 40px;
+}
+.a-image:hover {
+    background-color: transparent;
 }
 .logo {
     width: 50px;
+    border-radius: 2px;
 }
 .container {
     padding: 10px;
@@ -46,27 +51,36 @@ a:hover {
     list-style: square;
     margin-left: 30px; 
 }
-.portrait {
+.img-left {
     height: 255px;
+    border: 2px solid #333;
+}
+.img-compressed {
+    max-width: 100%;
+    height: auto;
 }
 @media only screen and (min-width: 768px) {
     a {
         padding: 0 10px;
     }
-    body {
+    /* body {
         font-size: 2rem;
-    }
+    } */
     .nav {
         display: flex;
         justify-content: left;
+    }
+    .nav ul {
+        align-items: flex-end;
     }
     .container {
         display: grid;
         grid-template-columns: 1fr 1.61803398875fr;
     }
-    .portrait {
+    .img-left {
         height: auto;
-        width: 285px;
+        max-width: 100%;
+        /* width: 285px; */
     }
     .container > div {
         margin-left: 10px;;
