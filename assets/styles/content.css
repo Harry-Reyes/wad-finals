@@ -17,6 +17,7 @@ a {
 a:hover {
     color: #333;
     background-color: #ddd;
+    transition: 300ms;
 }
 .nav {
     display: grid;
@@ -59,13 +60,25 @@ a:hover {
     max-width: 100%;
     height: auto;
 }
+.selected {
+    background-color: #ddd;
+    color: #333;
+}
+.contact {
+    display: flex;
+    font-size: 1.9rem;
+    place-content: center center;
+    color: #333;
+    margin-top: 10px;
+}
+.contact i {
+    font-size: 2.9rem;
+    margin-right: 5px;
+}
 @media only screen and (min-width: 768px) {
     a {
         padding: 0 10px;
     }
-    /* body {
-        font-size: 2rem;
-    } */
     .nav {
         display: flex;
         justify-content: left;
@@ -76,6 +89,7 @@ a:hover {
     .container {
         display: grid;
         grid-template-columns: 1fr 1.61803398875fr;
+        align-items: center;
     }
     .img-left {
         height: auto;
@@ -84,5 +98,11 @@ a:hover {
     }
     .container > div {
         margin-left: 10px;;
+    }
+    .contact {
+        font-size: 2.5rem;
+    }
+    .contact i {
+        font-size: 3.5rem;
     }
 }
